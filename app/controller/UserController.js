@@ -8,8 +8,8 @@ var paypal = require('paypal-rest-sdk');
 var morgan = require('morgan');
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
-  'client_id': 'AYVTNK773GJPFGR0tntTZFWAl_tJkgN-qbMafhRVgAwO0d0jXsNuT1KdcyXaeWlqmySbSc-unasn2fjO',
-  'client_secret': 'ECafsQcIVKtfPxhWuYm4izV3KAtBUxZ6UBQoPXTsaEBYQxxhBomzDizHwpfMqrf6Kg-zey5ehgDnv6Ju'
+  'client_id': 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
+  'client_secret': 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
 });
 
 
