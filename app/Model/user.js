@@ -1,21 +1,27 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var adminrcd = new Schema({
-  FirstName : { type : String ,unique : true},
-  LastName  : { type : String },
-  Phone     : { type : Number,unique : true },
-  Image     : { type : String  },
-  Password  : { type : String  },
-  AccountType : { type : String ,
-                   enum ['Admin','Hr','Employee'],
-                   default : Employee },
-  Verifymail :  { verificationStatus : { type : Boolean , defaults : false },
-                   email : type : String },
+     var adminrcd = new Schema({
+            FirstName :               { type : String, required : true},
+            LastName  :               { type : String },
+            Phone     :               { type : Number },
+            Image     :               { type : String, default : '' },
+            Password  :               { type : String  },
+            Email :                   { type : String },
+            active              :     { default:false,type:Boolean},
+            AccountType :             { type : String ,
+                                            enum : ['Admin','Hr','Employee'],
+                                                    default : 'Employee' },
+            Verifymail :              { verificationStatus : { type : Boolean , default : false },
 
-  CreatedAt :  { type  : date ,default :Date.now },
-  IsDelete :   { type : Boolean , defaults : false }
 
-})
 
-module.exports = mongoose.model('companyRecord',adminrcd);
+            CreatedAt :               { type  : Date ,default : Date.now },
+            IsDelete :                { type : Boolean , defaults : false },
+            verificationToken :       { type : String }
+
+                    }
+
+   });
+
+module.exports = mongoose.model('HellocompanyRecord',adminrcd);

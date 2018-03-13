@@ -1,10 +1,13 @@
 var express = require('express');
+
+var usered = require('../app/controller/UserController');
 var router = express.Router();
-var usered = require('../controller/UserController');
 router.get('/getUsers', function(req, res){
-  console.log('from router');
+  console.log('from hgggggggggggggfrouter');
 
 })
 router.post('/registration', usered.registration);
+router.post('/login',usered.login);
+router.post('/paymentIntegration',usered.paymentIntegration);
 
-modeule.exports = router;
+module.exports = router;
