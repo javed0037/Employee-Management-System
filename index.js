@@ -2,8 +2,11 @@ var express  = require('express');
 var bodyparser = require('body-parser')
 var mongoose  = require('mongoose');
 var USER = require('./routes/adminrout');
+var PaypalMod = require('./routes/paypalModel');
 var MYcompanyRecord = require('./app/Model/user.js');
+var MyFollow  =  require('./app/Model/FollowerForllowingModels.js');
 var tkh =require('./routes/tkh');
+var Pal = require('./routes/paypalModel');
 var jwt = require('jsonwebtoken');
 var http = require('http');
 var bcrypt = require('bcrypt');
@@ -30,6 +33,8 @@ app.use(morgan('dev'));
 console.log('this is dev param ');
 
 app.use('/user',USER);
+app.use('/pal',PaypalMod);
+app.use('/follow',MyFollow)
 
 
 
@@ -86,6 +91,7 @@ app.use('/TKH/*', function(req, res, next){
 })
 
 app.use('/TKH', tkh);
+
 
 console.log('hooooooooooooooooooooooooo');
 app.listen(8050,function(req,res){

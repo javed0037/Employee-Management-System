@@ -9,6 +9,7 @@ var Schema = mongoose.Schema;
             Password  :               { type : String  },
             Email :                   { type : String },
             active              :     { default:false,type:Boolean},
+            verificationToken  :      { type : String},
             AccountType :             { type : String ,
                                             enum : ['Admin','Hr','Employee'],
                                                     default : 'Employee' },
